@@ -1,0 +1,66 @@
+{
+  "name": "@capacitor/axplugin",
+  "version": "1.0.0",
+  "description": "Plugin Capacitor para simular testes de velocidade de internet usando AxPlugin nativo",
+  "main": "dist/plugin.cjs.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
+  "unpkg": "dist/plugin.js",
+  "files": [
+    "android/",
+    "dist/",
+    "ios/"
+  ],
+  "author": "Emerson Sampaio",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": {
+    "url": ""
+  },
+  "keywords": [
+    "capacitor",
+    "plugin",
+    "axplugin",
+    "velocidade",
+    "internet",
+    "outsystems",
+    "android"
+  ],
+  "scripts": {
+    "verify": "npm run verify:android",
+    "verify:android": "cd android && ./gradlew clean build test && cd ..",
+    "lint": "npm run eslint",
+    "eslint": "eslint . --ext ts",
+    "build": "npm run clean && tsc && rollup -c rollup.config.js",
+    "clean": "rimraf ./dist",
+    "watch": "tsc --watch",
+    "prepublishOnly": "npm run build",
+    "docgen": "docgen --api AxPluginPlugin --output-readme README.md --output-json dist/docs.json"
+  },
+  "devDependencies": {
+    "@capacitor/android": "^6.0.0",
+    "@capacitor/core": "^6.0.0",
+    "@capacitor/docgen": "^0.2.2",
+    "@ionic/eslint-config": "^0.4.0",
+    "@ionic/swiftlint-config": "^1.1.2",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "prettier-plugin-java": "^2.6.0",
+    "rimraf": "^5.0.5",
+    "rollup": "^4.18.0",
+    "swiftlint": "^1.0.2",
+    "typescript": "~5.4.5"
+  },
+  "peerDependencies": {
+    "@capacitor/core": "^6.0.0"
+  },
+  "capacitor": {
+    "android": {
+      "src": "android"
+    }
+  }
+}
