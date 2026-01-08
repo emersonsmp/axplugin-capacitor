@@ -13,7 +13,8 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:8.2.1'
-        implementation(name: 'axplugin-release', ext: 'aar')
+        implementation project(':capacitor-android')
+        implementation files('libs/axplugin-release.aar') 
     }
 }
 
