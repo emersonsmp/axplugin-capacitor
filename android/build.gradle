@@ -7,9 +7,13 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+        flatDir {
+            dirs 'libs'
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:8.2.1'
+        implementation(name: 'axplugin-release', ext: 'aar')
     }
 }
 
