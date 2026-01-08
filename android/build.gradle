@@ -7,14 +7,9 @@ buildscript {
     repositories {
         google()
         mavenCentral()
-        flatDir {
-            dirs 'libs'
-        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:8.2.1'
-        implementation project(':capacitor-android')
-        implementation files('libs/axplugin-release.aar') 
     }
 }
 
@@ -23,7 +18,7 @@ apply plugin: 'com.android.library'
 android {
     namespace "com.axplugin.capacitor"
     compileSdk project.hasProperty('compileSdkVersion') ? rootProject.ext.compileSdkVersion : 34
-
+    
     defaultConfig {
         minSdkVersion project.hasProperty('minSdkVersion') ? rootProject.ext.minSdkVersion : 22
         targetSdkVersion project.hasProperty('targetSdkVersion') ? rootProject.ext.targetSdkVersion : 34
@@ -31,18 +26,18 @@ android {
         versionName "1.0.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
+    
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
+    
     lint {
         abortOnError false
     }
-
+    
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
@@ -52,14 +47,11 @@ android {
 repositories {
     google()
     mavenCentral()
-    flatDir {
-        dirs 'src/main/libs'
-    }
 }
 
 dependencies {
-    implementation fileTree(dir: 'src/main/libs', include: ['*.jar', '*.aar'])
     implementation project(':capacitor-android')
+    implementation files('libs/axplugin-release.aar')
     implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
