@@ -63,5 +63,23 @@
     "android": {
       "src": "android"
     }
+  },
+  "buildConfigurations": {
+    "android": {
+      "gradle": {
+        "repositories": [
+          {
+            "type": "maven",
+            "url": "https://jitpack.io"
+          }
+        ],
+        "dependencies": [
+          {
+            "type": "implementation",
+            "module": "com.github.emersonsmp:library-axplugin:v1.0.2"
+          }
+        ]
+      }
+    }
   }
 }
