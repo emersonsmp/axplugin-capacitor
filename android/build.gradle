@@ -8,6 +8,12 @@ buildscript {
         google()
         mavenCentral()
         maven { url "https://jitpack.io" }
+		maven { 
+            url "https://jitpack.io"
+            content {
+                includeGroup "com.github.emersonsmp"
+            }
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:8.2.1'
@@ -49,6 +55,12 @@ repositories {
     google()
     mavenCentral()
 	maven { url "https://jitpack.io" }
+	maven { 
+        url "https://jitpack.io"
+        content {
+            includeGroup "com.github.emersonsmp"
+        }
+    }
 }
 
 dependencies {
