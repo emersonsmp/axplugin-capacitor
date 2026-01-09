@@ -7,6 +7,7 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+        maven { url "https://jitpack.io" }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:8.2.1'
@@ -51,7 +52,7 @@ repositories {
 
 dependencies {
     implementation project(':capacitor-android')
-    implementation files('libs/axplugin-release.aar')
+    implementation "com.github.emersonsmp:axplugin-capacitor:v1.0.2"
     implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
